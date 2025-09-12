@@ -1,0 +1,12 @@
+streamlit
+langchain
+langchain-google-genai
+langchain-community
+langgraph
+duckduckgo-search
+python-dotenv
+wikipedia
+requests
+PyPDF2
+youtube-transcript-api
+pytz
