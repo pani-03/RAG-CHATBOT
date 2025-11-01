@@ -1,54 +1,88 @@
-RAG-Powered Chatbot with Google Docs Integration
-Introduction
-The RAG-Powered Chatbot with Google Docs Integration is an AI-driven conversational assistant that uses Retrieval-Augmented Generation (RAG) to answer user queries based on the content of their Google Docs. Users can securely sign in with their Google account, select documents to add to the chatbot’s knowledge base, and then ask questions in natural language. The chatbot retrieves relevant information from the selected documents to generate accurate responses. If the answer cannot be found in the user's documents, the chatbot clearly indicates this and provides an answer from its general knowledge base.
-Features
-Core Features:
-Google OAuth 2.0 authentication for secure user sign-in.
-Retrieval-Augmented Generation (RAG) pipeline to extract relevant information from selected Google Docs.
-Listing and selection of Google Docs from the user's account.
-Natural language chat interface for querying the documents.
-Fallback mechanism: if a document-based answer is not found, the chatbot responds using its own knowledge and notifies the user.
-Bonus Features:
-Support for Google Sheets and Google Slides in addition to Docs.
-On-demand document summarization.
-Multi-document querying across all selected documents.
-Cloud deployment (e.g., hosting on AWS, Heroku, or GCP).
-Demo
+<h1>RAG-Powered Chatbot with Google Docs Integration</h1>
 
-Figure: Example of the RAG-Powered Chatbot interface.
-Installation & Setup
-Clone the repository and install dependencies:
-git clone https://github.com/<your-username>/rag-chatbot.git
-cd rag-chatbot
+<h2>💡 Introduction</h2>
+
+<p>
+The <strong>RAG-Powered Chatbot with Google Docs Integration</strong> is an AI chatbot that combines the power of Retrieval-Augmented Generation (RAG) with Google Docs. It allows users to sign in with Google, select their documents, and ask questions in natural language. The chatbot retrieves relevant information from the selected documents and generates context-aware responses. If no information is found, it gracefully falls back to general knowledge responses.
+</p>
+
+<h2>🚀 Features</h2>
+
+<ul>
+  <li><strong>Google OAuth 2.0</strong> authentication for secure access</li>
+  <li><strong>View & select Google Docs</strong> from your Drive</li>
+  <li><strong>Document-aware Q&A:</strong> uses RAG pipeline to fetch context from selected docs</li>
+  <li><strong>Fallback response:</strong> uses general LLM knowledge when document info is missing</li>
+  <li><strong>Multilingual chat support:</strong> English, Hindi, French, German</li>
+  <li><strong>PDF file upload and parsing</strong> support</li>
+  <li><strong>Utility tools:</strong> Weather, Timezone, Currency, Unit converter, Wikipedia, Translator</li>
+  <li><strong>YouTube transcript extraction</strong> support</li>
+  <li><strong>Chat memory:</strong> thread-based chat history with session persistence</li>
+  <li><strong>Export chat history</strong> as downloadable file</li>
+</ul>
+
+<h2>🖼️ Demo</h2>
+
+<p>
+<b>Live demo link:</b> <a href="#">(Coming Soon)</a><br/>
+<b>Preview:</b><br/>
+<img src="https://via.placeholder.com/800x400.png?text=Chatbot+Demo+Screenshot" alt="Demo Screenshot" />
+</p>
+
+<h2>⚙️ Installation & Setup</h2>
+
+<pre><code>
+# Clone the repository
+git clone https://github.com/yourusername/rag-chatbot-google-docs.git
+cd rag-chatbot-google-docs
+
+# Create virtual environment (optional)
+python -m venv venv
+source venv/bin/activate
+
+# Install dependencies
 pip install -r requirements.txt
 
-# Configure Google Cloud OAuth 2.0 credentials (set up OAuth client in Google Cloud Console).
-# For example, add your credentials to a config file or environment variables.
+# Run the Streamlit app
+streamlit run app.py
+</code></pre>
 
-# Run the application
-python main.py
-Technologies Used
-Python: Core programming language for backend logic and RAG implementation.
-Flask: Web framework used to build API endpoints and serve the chatbot interface.
-OpenAI GPT: (or GPT-4) Large language model for generating intelligent, context-aware responses.
-Google OAuth 2.0: Secure authentication to allow users to log in with their Google account.
-Google Docs API: Used to fetch and manage content from Google Docs.
-LangChain: High-level framework to streamline the RAG pipeline (optional).
-HTML/CSS/JavaScript: Frontend technologies for building the interactive chat UI.
-Docker: Containerization for easy deployment (optional).
-Folder Structure
+<h2>🔧 Technologies Used</h2>
+
+<ul>
+  <li><strong>Python:</strong> Backend logic</li>
+  <li><strong>Streamlit:</strong> Interactive frontend UI</li>
+  <li><strong>LangGraph:</strong> Persistent chat flow graph and state management</li>
+  <li><strong>LangChain:</strong> Tool integration with LLM (tools, agents, prompts)</li>
+  <li><strong>Google APIs:</strong> Docs API & OAuth 2.0 login</li>
+  <li><strong>OpenWeather API:</strong> Weather tool</li>
+  <li><strong>ExchangeRate API:</strong> Currency converter</li>
+  <li><strong>Google Translate API:</strong> Multilingual support</li>
+  <li><strong>Wikipedia, YouTube Transcript, PDF extractors:</strong> Custom tools</li>
+  <li><strong>SQLite:</strong> Local database for storing chat sessions</li>
+</ul>
+
+<h2>📁 Folder Structure</h2>
+
+<pre><code>
 .
-├── backend/            # Python backend code
-│   ├── main.py         # Application entry point
-│   ├── auth.py         # Google OAuth logic
-│   └── rag.py          # RAG pipeline implementation
-├── frontend/           # Web frontend files
-│   ├── index.html      # Main HTML file
-│   └── static/         # Static assets (CSS/JS)
-├── requirements.txt    # Project dependencies
-├── README.md           # Project documentation
-└── LICENSE             # License file
-Live Demo
-Try the live demo of the chatbot here (link placeholder).
-Contributing & License
-Contributions are welcome! Please feel free to open issues or submit pull requests to improve the project. This project is licensed under the MIT License. See the LICENSE file for details.
+├── app.py                 # Streamlit frontend
+├── backend/               # LLM logic, tools, RAG pipeline
+│   ├── chatbot.py         # LangGraph chatbot state engine
+│   ├── tools/             # Tool functions: weather, wiki, etc.
+│   └── utils.py           # PDF, transcript utilities
+├── requirements.txt       # Dependencies
+├── README.md              # Project documentation
+└── chatbot.db             # SQLite checkpoint database
+</code></pre>
+
+<h2>🌐 Live Demo</h2>
+
+<p><a href="#">👉 Click here to try the live chatbot (Coming Soon)</a></p>
+
+<h2>🤝 Contribution & License</h2>
+
+<p>
+Feel free to fork this repo, raise issues or pull requests. All contributions are welcome!<br/><br/>
+Licensed under the <strong>MIT License</strong>. See the <code>LICENSE</code> file for details.
+</p>
